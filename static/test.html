@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+</head>
+
+<script>
+$(function(){
+  $.ajax({
+    type: "POST",
+    dataType: "json",
+    url: "/api/setPreferences",
+
+    /* test for Register
+    data: {
+      email: "test01@example.com",
+      password: "111111",
+      name: "Mr test01",
+      birthdate: "1995-01-01",
+      classificationName: "Music",
+      genre: "R&B"
+    },
+    */
+
+    /* test for login
+    data: {
+      email: "test01@example.com",
+      password: "111111"
+    },
+    */
+
+    /* test for getEvents
+    data: {
+      uid: 4
+    },
+    */
+
+
+
+    data: {
+      uid: 4,
+      classificationName: "Film",
+      genre: "Foreign"
+    },
+
+
+    success: function (data) {
+      console.log(`Success: return information: ${JSON.stringify(data)}`);
+    },
+
+    error: function (data) {
+      console.log(`Fail: return information: ${JSON.stringify(data)}`);
+    }
+  });
+})
+</script>
+
+</html>
